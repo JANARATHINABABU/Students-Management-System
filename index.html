@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>Student Management System</header>
+
+  <div class="container">
+    <div class="top-bar">
+      <button class="btn-primary" id="showFormBtn" onclick="openForm()">+ Add Student</button>
+    </div>
+
+    <div id="formSection">
+      <div class="form-header" id="formTitle">Add New Student</div>
+      <div class="form-body">
+        <form id="studentForm" onsubmit="saveStudent(event)">
+          <div class="form-row">
+            <label for="rollNo">Roll Number</label>
+            <input type="text" id="rollNo" placeholder="e.g. 21EE001" required />
+          </div>
+          <div class="form-row">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="Student" required />
+          </div>
+          <div class="form-row">
+            <label for="department">Department</label>
+            <input type="text" id="department" placeholder="Short form" required />
+          </div>
+          <div class="form-row">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="e.g. student@example.com" required />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary" id="submitBtn">Add Student</button>
+            <button type="button" class="btn-secondary" onclick="closeForm()">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <h2>Student Records</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Roll No</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="studentTableBody"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
